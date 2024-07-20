@@ -1,51 +1,38 @@
-export default function Home() {
+import Header from './component/Header';
+import Taskinput from './component/Taskinput';
+import Task from './component/Task';
+import Footer from './component/Footer';
+
+function Home() {
+  const tasks = [
+    { id: 1, title: "Read a book", isDone: true },
+    { id: 2, title: "Take a shower", isDone: false },
+    { id: 3, title: "Sleep", isDone: false },
+  ];
+
   return (
     // Main container
-    <div className="container mx-auto">
-      {/* header section */}
-      <div>
-        <h4 className="display-4 fst-italic text-center">Todo List Mock Up</h4>
-        <p className="text-secondary text-center">
-          This lab teach you how to split react component(s)
-        </p>
-      </div>
+    <div className="fs-6 container mx-auto">
 
-      {/* tasks container */}
+      {/* Header section */}
+      <Header />
+
+      {/* Tasks container */}
       <div style={{ maxWidth: "400px" }} className="mx-auto">
-        {/* task input */}
-        <div className="d-flex gap-1">
-          <input
-            className="form-control"
-            placeholder="Insert a task here.."
-          ></input>
-          <button className="btn btn-primary">Add</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Read a book</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Take a shower</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-        {/* task */}
-        <div className="d-flex p-3 gap-2 align-items-center border-bottom">
-          <span>Sleep</span>
-          <button className="btn btn-success">Done</button>
-          <button className="btn btn-danger">Delete</button>
-        </div>
+
+        {/* Task input */}
+        <Taskinput />
+
+        {/* Task detail */}
+        <Task {...tasks[0]} />
+        <Task {...tasks[1]} />
+        <Task {...tasks[2]} />
       </div>
 
-      {/* //footer section */}
-      <div className="mt-3">
-        <p className="text-secondary text-center">
-          copyright © 2023 Dararat Buayim 660610759
-        </p>
-      </div>
+      {/* Footer section */}
+      <Footer year="2024" fullname="Dararat Buayim" studentid="660610759" />
     </div>
   );
 }
+
+export default Home;
