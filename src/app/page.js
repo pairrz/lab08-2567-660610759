@@ -43,7 +43,7 @@ export default function Home() {
       {/* //footer section */}
       <div className="mt-3">
         <p className="text-secondary text-center">
-          copyright © 2023 Chayanin Suatap 12345678
+          copyright © 2023 Dararat Buayim 660610759
         </p>
       </div>
     </div>
